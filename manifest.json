@@ -1,0 +1,35 @@
+{
+  "name": "World Leaders Danceoff",
+  "version": "1.0",
+  "description": "Trigger a dancing faceoff of world leaders whenever the words 'war' or 'putin' or 'crisis' or 'modi' or 'trump' apprear on a page ",
+  "icons": {
+    "16": "image/war.png",
+    "32": "image/war32.png",
+    "48": "image/war48.png",
+    "128": "image/war128.png"
+  },
+  "background": {
+    "scripts": ["console.js", "default options.js", "background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Take a screen shot!"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["console.js", "default options.js", "contents.js"]
+    }
+  ],
+  "permissions": ["activeTab", "storage"],
+  "web_accessible_resources": [
+    "image/trump.gif",
+    "image/trump2.gif",
+    "image/putin.gif",
+    "image/mo.gif",
+    "image/pope.gif",
+    "sounds/boogie.mp3"
+  ],
+  "manifest_version": 2
+}
